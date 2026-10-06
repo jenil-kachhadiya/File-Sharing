@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #2563eb;
+}
+
+.Toastify__progress-bar--success {
+  background: #2563eb !important;
+}
