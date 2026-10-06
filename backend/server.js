@@ -22,30 +22,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-/*
-  CORS
-  Keep localhost working while developing.
-*/
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://file-sharing-sage.vercel.app",
+    ],
     credentials: true,
   })
 );
 
-/*
-  API ROUTES
-*/
+
 app.use("/api", userRoute);
 app.use("/api/folder", folderRoutes);
 app.use("/api/file", fileRoutes);
 app.use("/api/share", shareRoutes);
 
-/*
-  FRONTEND
-  React build will be inside:
-  frontend/dist
-*/
+
 const frontendPath = path.join(__dirname, "../frontend/dist");
 
 app.use(express.static(frontendPath));
