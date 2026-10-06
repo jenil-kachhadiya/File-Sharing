@@ -1,7 +1,6 @@
 import { FiUpload, FiDownload } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { nanoid } from "nanoid";
 
 const Home = () => {
   const navigate = useNavigate();
