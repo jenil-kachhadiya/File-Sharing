@@ -35,6 +35,7 @@ export const signup = async (req, res) => {
 
     res.cookie("senderToken", user.userId, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       secure: false,
     });
 
